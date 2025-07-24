@@ -24,6 +24,13 @@ function App() {
 
   return (
     <>
+      <header className="w-full my-2 text-center">
+        <h1 className="text-4xl font-bold">Github username finder </h1>
+        <p className="text-lg">
+          Search for github users and check their public repositories
+        </p>
+      </header>
+
       <SearchInput
         username={username}
         setUsername={setUsername}

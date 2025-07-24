@@ -23,14 +23,21 @@ export default function SearchInput({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full p-4 gap-2 justify-center"
+    >
       <input
+        className="pl-2"
         type="text"
         value={username}
         onChange={handleChange}
         placeholder="Enter github username"
       />
-      <button type="submit">Search</button>
+
+      <button type="submit" className="bg-orange-300 p-2">
+        Search
+      </button>
     </form>
   );
 }
