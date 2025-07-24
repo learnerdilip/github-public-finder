@@ -1,10 +1,18 @@
+import { useState } from "react";
 import "./App.css";
+import SearchInput from "./components/SearchInput";
 
 function App() {
+  const [username, setUsername] = useState("");
+
   return (
-    <div>
-      <p className="bg-red">Click on the Vite and React logos to learn more</p>
-    </div>
+    <>
+      <SearchInput
+        username={username}
+        setUsername={setUsername}
+        onSearch={() => console.log("search now")}
+      />
+    </>
   );
 }
 
