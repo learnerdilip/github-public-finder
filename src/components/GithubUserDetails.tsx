@@ -14,12 +14,14 @@ export default function GithubUserDetails({
         <img
           src={userData.avatar_url}
           alt={"avatar image"}
-          className="w-40 h-40"
+          className="w-40 h-40 rounded-full border-2 border-blue-500"
         />
 
-        <div className="flex flex-col pl-2">
+        <div className="flex flex-col pl-2 justify-between">
           <div>
-            <p className="text-gray-900">{userData.name || userData.login}</p>
+            <p className="text-gray-900">{`@${
+              userData.name || userData.login
+            }`}</p>
             <p className="text-gray-900">
               {" "}
               <i> {userData.bio}</i>

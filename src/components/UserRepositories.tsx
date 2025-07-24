@@ -48,7 +48,9 @@ export default function UserRepositories({ repoUrl }: { repoUrl: string }) {
     <ErrorText text={error} />
   ) : (
     <>
-      <h2 className="text-3xl font-extrabold py-3">User repositories</h2>
+      <h2 className="text-3xl font-extrabold py-3">
+        {`User public repositories (${repos.length ?? 0})`}
+      </h2>
 
       <div className="h-full overflow-scroll w-full">
         <div className="w-full">
