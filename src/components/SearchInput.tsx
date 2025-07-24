@@ -13,7 +13,7 @@ export default function SearchInput({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (username) {
+    if (username.trim()) {
       onSearch(username);
     }
   };
