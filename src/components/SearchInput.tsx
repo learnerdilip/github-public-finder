@@ -1,11 +1,5 @@
 import type { ChangeEvent } from "react";
-import type React from "react";
-
-interface SearchInputProps {
-  username: string;
-  setUsername: (text: string) => void;
-  onSearch: (text: string) => void;
-}
+import type { SearchInputProps } from "../types/dataTypes";
 
 export default function SearchInput({
   username,
@@ -19,7 +13,9 @@ export default function SearchInput({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    onSearch(username);
+    if (username) {
+      onSearch(username);
+    }
   };
 
   return (
@@ -28,14 +24,16 @@ export default function SearchInput({
       className="flex w-full p-4 gap-2 justify-center"
     >
       <input
-        className="pl-2"
+        className="h-10 w-100 pl-2 border-2 border-orange-200 rounded-xl"
         type="text"
         value={username}
         onChange={handleChange}
         placeholder="Enter github username"
       />
-
-      <button type="submit" className="bg-orange-300 p-2">
+      <button
+        type="submit"
+        className="bg-orange-300 p-2 rounded-2xl font-bold cursor-pointer"
+      >
         Search
       </button>
     </form>
